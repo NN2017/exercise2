@@ -19,7 +19,10 @@ class Activation:
 
     @staticmethod
     def sigmoid(netOutput):
-        return lambda x: 1.0 / (1.0 + exp(-x))
+        res = 1.0 / (1.0 + exp(-netOutput))
+        # if 0 < netOutput:
+        #      print netOutput, "-s->", res, ":",  exp(-netOutput)
+        return res
 
     @staticmethod
     def sigmoidPrime(netOutput):

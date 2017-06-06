@@ -33,5 +33,6 @@ class Evaluator:
         print(confusion_matrix(testSet.label, pred))
 
     def printAccuracy(self, testSet, pred):
-        print("Accuracy of the recognizer: %.2f%%" %
-              (accuracy_score(testSet.label, pred)*100))
+        accuracy = accuracy_score(testSet.label, pred)*100
+        print("Accuracy of the recognizer: %.2f%%" % accuracy)
+        return accuracy

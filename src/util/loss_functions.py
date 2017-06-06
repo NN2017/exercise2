@@ -49,7 +49,6 @@ class DifferentError(Error):
         # It is the numbers of differences between target and output
         return target - output
 
-
 class MeanSquaredError(Error):
     """
     The Loss calculated by the mean of the total squares of differences between
@@ -60,7 +59,7 @@ class MeanSquaredError(Error):
 
     def calculateError(self, target, output):
         # MSE = 1/n*sum (i=1 to n) of (target_i - output_i)^2)
-        pass
+        return np.average(np.square(target-output))
 
 
 class SumSquaredError(Error):
@@ -73,7 +72,7 @@ class SumSquaredError(Error):
 
     def calculateError(self, target, output):
         # SSE = 1/2*sum (i=1 to n) of (target_i - output_i)^2)
-        pass
+        return np.sum(np.square(target-output))
 
 
 class BinaryCrossEntropyError(Error):

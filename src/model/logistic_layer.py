@@ -84,7 +84,9 @@ class LogisticLayer(Layer):
         ndarray :
             a numpy array (1,nOut) containing the output of the layer
         """
+        # return input.dot(self.weights)
         pass
+
 
     def computeDerivative(self, nextDerivatives, nextWeights):
         """
