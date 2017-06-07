@@ -6,6 +6,7 @@ Activation functions which can be used within neurons.
 
 from numpy import exp
 from numpy import divide
+from numpy import clip
 
 
 class Activation:
@@ -19,6 +20,7 @@ class Activation:
 
     @staticmethod
     def sigmoid(netOutput):
+    	netOutput = clip( netOutput, -500, 500 )
         res = 1.0 / (1.0 + exp(-netOutput))
         # if 0 < netOutput:
         #      print netOutput, "-s->", res, ":",  exp(-netOutput)
